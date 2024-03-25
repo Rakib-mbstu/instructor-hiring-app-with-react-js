@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -6,7 +6,12 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.card-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 350px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +40,9 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures items wrap to the next line if container is not wide enough */
+  margin-left: 2rem;
 }

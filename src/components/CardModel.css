@@ -1,0 +1,13 @@
+
+.card-img{
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+.card-div:hover{
+    transform: scale(1);
+}
+.card-div{
+    display: flex;
+    flex-wrap: wrap;
+    transition: transform 0.5s;
+}
