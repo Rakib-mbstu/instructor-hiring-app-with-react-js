@@ -1,18 +1,18 @@
 import "./App.css";
 import CardModel from "./components/CardModel";
+import MockDataGiver from "./components/mockdata";
 
 function App() {
-  const mockData = ["java","Python","C++"]
+  const mockData = MockDataGiver();
+  console.log(mockData);
   return (
     <>
       <div className="card-container">
-        {" "}
-        <CardModel name={"mir"} description={"An unexperienced WebDev that can do nothing...!"} expertise={mockData} ></CardModel>
-        <CardModel expertise={[]}></CardModel>
-        <CardModel></CardModel>
-        <CardModel></CardModel>
-        <CardModel></CardModel>
-        <CardModel></CardModel>
+        {
+          mockData && mockData.map((data,i)=>(
+            <CardModel key={i} name={data.first_name} description={data.description} expertise={[data.expertise]}/>
+          ))
+        }
       </div>
     </>
   );

@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Cards from "../Cards";
 import "./CardModel.css";
 import { ListGroupItem } from "react-bootstrap";
+import InputModal from "./InputModal";
 
 export default function CardModel({ name, description, expertise }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -32,13 +32,16 @@ export default function CardModel({ name, description, expertise }) {
          <div className={`list-group-flush ${isHovered ? "hidden" : ""}`}>
           <ListGroup>
             {expertise &&
-              expertise.map((sub) => 
+              expertise.map((sub) => (
                 <ListGroupItem>{sub}</ListGroupItem>
-              )}
+              ))}
           </ListGroup>
         </div>
        <Card.Footer>
-        <Cards/>
+        <div>
+          Charge: $120
+        </div>
+        <InputModal name={name}/>
        </Card.Footer>
       </Card>
     </div>
