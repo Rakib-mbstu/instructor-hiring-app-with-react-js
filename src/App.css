@@ -46,3 +46,24 @@
   flex-wrap: wrap; /* Ensures items wrap to the next line if container is not wide enough */
   margin-left: 2rem;
 }
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.SideBar {
+  width: 25%; /* Set initial width to occupy 20% of viewport */
+  min-width: 250px; /* Set a minimum width to prevent the sidebar from becoming too narrow */
+  background-color: #7EB0C7; /* Set background color */
+  position: relative; /* Fixed positioning to keep the sidebar visible while scrolling */
+  top: 0; /* Position from the top */
+  left: 0; /* Position from the left */
+  height: 100%; /* Occupy full height of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+  transition: width 0.3s ease; /* Add transition for smoother resizing */
+}
+@media screen and (max-width: 768px) {
+  .SideBar {
+    width: 100%; /* Make sidebar occupy full width on smaller screens */
+    min-width: 0; /* Reset minimum width */
+  }
+}

@@ -1,26 +1,30 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "./navbar.css";
+import Search from "./Search";
 
-export function Navbars() {
+function Navbars({originData,viewData,setViewData}) {
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar navbar-dark bg-dark">
-      <Container>
-        <Navbar.Brand href="#home">Find a Intructor</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        {/* <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse> */}
+    <Navbar
+      expand="lg"
+      className="navbar navbar-dark"
+      style={{ backgroundColor: "#382B47" }}
+    >
+      <Container fluid>
+        <Navbar.Brand href="#">Find an Instructor</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          ></Nav>
+          <Search originData={originData} viewData={viewData} setViewData={setViewData} />
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
+
+export default Navbars;

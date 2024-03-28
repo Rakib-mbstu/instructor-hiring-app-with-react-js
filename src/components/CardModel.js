@@ -32,8 +32,8 @@ export default function CardModel({ name, description, expertise }) {
          <div className={`list-group-flush ${isHovered ? "hidden" : ""}`}>
           <ListGroup>
             {expertise &&
-              expertise.map((sub) => (
-                <ListGroupItem>{sub}</ListGroupItem>
+              expertise.map((sub,i) => (
+                <ListGroupItem key={i}>{sub}</ListGroupItem>
               ))}
           </ListGroup>
         </div>
