@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "./navbar.css";
 import Search from "./Search";
 
-function Navbars({originData,viewData,setViewData}) {
+function Navbars({ originData, viewData, setViewData }) {
   return (
     <Navbar
       expand="lg"
@@ -20,7 +20,11 @@ function Navbars({originData,viewData,setViewData}) {
             style={{ maxHeight: "100px" }}
             navbarScroll
           ></Nav>
-          <Search originData={originData} viewData={viewData} setViewData={setViewData} />
+          <Search
+            originData={originData}
+            viewData={viewData}
+            setViewData={setViewData}
+          />
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Button,
   FormControl,
@@ -15,6 +17,24 @@ const InputModal = ({ name }) => {
   };
   const closeModal = () => {
     setShow(false);
+  };
+
+  const notify = () => {
+    setShow(false);
+    toast.success("Sccessfully Booked an Appointment", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  const handleSubmit = () => {
+    // closeModal();
+    notify();
   };
   return (
     <div>
@@ -38,12 +58,16 @@ const InputModal = ({ name }) => {
               <Form.Control type="number" placeholder="+8801---" />
             </FormGroup>
             <FormGroup className="mb-3">
-              <Form.Label>Mobile Number</Form.Label>
+              <Form.Label>Mail</Form.Label>
               <Form.Control type="mail" placeholder="abc@mail.com" />
             </FormGroup>
             <FormGroup className="mb-3">
               <Form.Label>Details</Form.Label>
-              <Form.Control as="textarea" placeholder="Short notes on what you would like to learn....." rows={3} />
+              <Form.Control
+                as="textarea"
+                placeholder="Short notes on what you would like to learn....."
+                rows={3}
+              />
             </FormGroup>
             <FormGroup>
               <FormLabel>Enter Prefered Date and Time</FormLabel>
@@ -51,6 +75,12 @@ const InputModal = ({ name }) => {
             </FormGroup>
           </Form>
         </Modal.Body>
+        <Button
+          style={{ backgroundColor: "aqua", color: "black" }}
+          onClick={handleSubmit}
+        >
+          <h4>SUBMIT</h4>
+        </Button>
       </Modal>
     </div>
   );
