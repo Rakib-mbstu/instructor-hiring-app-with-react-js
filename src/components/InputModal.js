@@ -44,7 +44,7 @@ const InputModal = ({ name }) => {
       <Modal show={show} onHide={closeModal}>
         <Modal.Header style={{ backgroundColor: "aqua" }} closeButton>
           <Modal.Title>
-            <h2>To Hire {name}</h2>Enter Your Details...!
+            <h2>To Request a Session with {name}</h2>Enter Your Details...!
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -55,7 +55,7 @@ const InputModal = ({ name }) => {
             </FormGroup>
             <FormGroup className="mb-3">
               <Form.Label>Mobile Number</Form.Label>
-              <Form.Control type="number" placeholder="+8801---" />
+              <Form.Control type="tel" placeholder="+8801" />
             </FormGroup>
             <FormGroup className="mb-3">
               <Form.Label>Mail</Form.Label>
@@ -79,7 +79,7 @@ const InputModal = ({ name }) => {
           style={{ backgroundColor: "aqua", color: "black" }}
           onClick={handleSubmit}
         >
-          <h4>SUBMIT</h4>
+          <h4>SUBMIT REQUEST</h4>
         </Button>
       </Modal>
     </div>

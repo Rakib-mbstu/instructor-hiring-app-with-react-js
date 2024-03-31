@@ -9,7 +9,7 @@ export default function Search({ originData, viewData, setViewData }) {
     e.preventDefault();
     const newDataSet = originData.filter(
       (data) =>
-        data.first_name.toLowerCase().includes(searchItem) !== false ||
+        data.name.toLowerCase().includes(searchItem) !== false ||
         data.description.toLowerCase().includes(searchItem) !== false ||
         data.expertise.toLowerCase().includes(searchItem)
     );

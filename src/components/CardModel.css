@@ -1,38 +1,36 @@
-
+/* CardModel.css */
 .card-img{
-    width: 100%;
-    border-radius: 1rem 1rem 0 0;
+  height: 180px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .card-div:hover{
-    transform: scale(1.1);
-    z-index: 1;
+  transform: scale(1.1);
+  z-index: 1;
 }
 .card-div{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    transition: transform 0.5s;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  transition: transform 0.5s;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
 }
 .card-div .card-texts{
-    display: none; /* Initially hide the text */
+  display: none; /* Initially hide the text */
   position: absolute; /* Position the text absolutely */
   bottom: 0; /* Align the text to the bottom of the card */
   left: 0; /* Align the text to the left of the card */
   right: 0; /* Align the text to the right of the card */
   padding: 1rem; /* Add padding to the text */
   background-color: rgba(26, 169, 182, 0.8);
-  
 }
 .card-hover-text.hidden {
-    display: none;
-  }
-  
-  .list-group-flush.hidden {
-    display: none;
-  }
-  
-  
+  display: none;
+}
+.list-group-flush.hidden {
+  display: none;
+}

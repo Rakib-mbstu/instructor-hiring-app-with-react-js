@@ -1,7 +1,6 @@
 import "./App.css";
 import CardModel from "./components/CardModel";
 import MockDataGiver from "./components/mockdata";
-import SideDiv from "./components/SideDiv";
 import Navbars from "./components/Navbar";
 import { useState } from "react";
 import { Slideshow } from "./components/MidSection";
@@ -21,18 +20,21 @@ function App() {
       <Slideshow />
       <div className="main">
         <div className="SideBar">
-          <ItemFilter />
+          <ItemFilter originalData={originData} viewData={viewData} setViewData={setViewData}/>
         </div>
         <div className="card-container">
           {viewData &&
             viewData.map((data, i) => (
               <CardModel
                 key={i}
-                name={data.first_name}
+                name={data.name}
                 description={data.description}
-                expertise={[data.expertise]}
+                additional_description={data.additional_description}
+                expertise={[...data.expertise]}
+                consultation_fee={data.consultation_fee}
               />
-            ))}
+            ))
+            }
         </div>
       </div>
     </>

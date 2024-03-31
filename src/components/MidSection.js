@@ -25,7 +25,7 @@ const slideImages = [
     caption: "Slide 2",
   },
   {
-    url: "/img/3.jpg",
+    url: "/img/1.jpeg",
     caption: "Slide 3",
   },
 ];
