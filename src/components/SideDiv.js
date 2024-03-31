@@ -5,7 +5,7 @@ const SideDiv = () => {
   return (
     <div>
       <h2>Expertise </h2>
-      <input type="checkbox" value={"one"} /> <label>Java</label>
+      <input type="checkbox" value={"one"} /> <label>Jaa</label>
       <br />
       <input type="checkbox" value={"one"} /> <label>JavaScript</label>
       <br />
