@@ -20,7 +20,7 @@ const SideDiv = () => {
       <br></br>
       <h2>Price</h2>
       <input type="number" style={{ width: "90px" }} placeholder="Min" /> -{" "}
-      <input type="number" style={{ width: "90px" }} placeholder="Max" />{" "}
+      <input type="number" style={{ width: "90px" }} placeholder="Max" />{" "}<br/>
       <Button variant="primary">Apply</Button>
       <br></br>
       <br></br>

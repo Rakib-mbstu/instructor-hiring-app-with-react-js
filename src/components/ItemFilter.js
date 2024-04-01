@@ -1,8 +1,13 @@
-import { Button, FormLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import "./ItemFilter.css";
 import { useState } from "react";
-export default function ItemFilter({ originalData, viewData, setViewData }) {
+export default function ItemFilter({
+  originalData,
+  viewData,
+  setViewData,
+  consultation_fee,
+}) {
   const [radioSet, setRadioSet] = useState([]);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(1000);
@@ -26,12 +31,15 @@ export default function ItemFilter({ originalData, viewData, setViewData }) {
     }
   };
   const handleMinMax = (e) => {
-    console.log(min + " " + max);
+    const newViewData = originalData.filter((data) => {
+      return data.consultation_fee >= min && data.consultation_fee <= max;
+    });
+    setViewData(newViewData);
   };
   return (
     <>
-      <div>
-        <h3>Expertise:</h3>
+      <div className="d-none d-lg-block">
+        <h3 id="headings">Expertise:</h3>
         <Form className="form-container" onChange={handleradioSet}>
           <input type="checkbox" value={"Java"} />{" "}
           <label className="ltext">Java</label>
@@ -51,28 +59,32 @@ export default function ItemFilter({ originalData, viewData, setViewData }) {
           <input type="checkbox" value={"Python"} />{" "}
           <label className="ltext">Python</label>
         </Form>
-      </div>
-      <h2>Price:</h2>
-      <div style={{ marginLeft: "10px" }}>
-        <Form onClick={handleMinMax}>
-          <input
-            type="number"
-            style={{ width: "90px" }}
-            placeholder="Min"
-             onChange={(e)=>{setMin(e.target.value)}}
-          />{" "}
-          -{" "}
-          <input
-            type="number"
-            style={{ width: "90px" }}
-            placeholder="Max"
-             onChange={(e)=>{setMax(e.target.value)}}
-          />{" "}
-          <Button variant="primary">Apply</Button>
-        </Form>
-      </div>
-      <div>
-        <Form>
+        <h3 id="headings">Price:</h3>
+        <div style={{ marginLeft: "10px" }}>
+          <Form onClick={handleMinMax}>
+            <input
+              type="number"
+              style={{ width: "90px" }}
+              placeholder="Min"
+              onChange={(e) => {
+                setMin(e.target.value);
+              }}
+            />{" "}
+            -{" "}
+            <input
+              type="number"
+              style={{ width: "90px" }}
+              placeholder="Max"
+              onChange={(e) => {
+                setMax(e.target.value);
+              }}
+            />{" "}
+            <br></br>
+            <Button variant="primary">Apply</Button>
+          </Form>
+        </div>
+        <div style={{ height: "300px" }}>
+          {/* <Form>
           <FormLabel>Search By Rating</FormLabel>
 
           <select id="ratings">
@@ -82,7 +94,8 @@ export default function ItemFilter({ originalData, viewData, setViewData }) {
             <option value="2">★★</option>
             <option value="1">★</option>
           </select>
-        </Form>
+        </Form> */}
+        </div>
       </div>
     </>
   );
