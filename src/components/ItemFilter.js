@@ -47,7 +47,7 @@ export default function ItemFilter({
           <input type="checkbox" value={"JavaScript"} />{" "}
           <label className="ltext">JavaScript</label>
           <br />
-          <input type="checkbox" value={"Boot"} />{" "}
+          <input type="checkbox" value={"Spring Boot"} />{" "}
           <label className="ltext">Spring Boot</label>
           <br />
           <input type="checkbox" value={"Cpp"} />{" "}
